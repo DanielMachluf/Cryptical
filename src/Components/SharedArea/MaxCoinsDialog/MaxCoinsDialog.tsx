@@ -33,18 +33,15 @@ export function MaxCoinsDialog(props: MaxCoinsDialogProps): JSX.Element {
     (state: AppState) => state.selectedCoins
   );
   // Remove and Replace coin
-    function handleReplace(coinIdToRemove: string): void {
-      // First remove the chosen coin
-      dispatch(selectedCoinsActions.removeSelectedCoin(coinIdToRemove));
-      // Then immediately add the coin the user wanted
-      dispatch(selectedCoinsActions.addSelectedCoin(props.pendingCoinSymbol));
-      
-      notify.success(`${props.pendingCoinSymbol} is now added successfully!`);
-      
-      props.onClose();
-    }
+  function handleReplace(coinIdToRemove: string): void {
+    // First remove the chosen coin
+    dispatch(selectedCoinsActions.removeSelectedCoin(coinIdToRemove));
+    // Then immediately add the coin the user wanted
+    dispatch(selectedCoinsActions.addSelectedCoin(props.pendingCoinSymbol));
+    props.onClose();
+  }
   return (
-    <Dialog open={props.open} onClose={() => {}}>
+    <Dialog open={props.open} onClose={() => { }}>
       {/* We disable default close behavior to enforce coin removal */}
 
       <DialogTitle>
