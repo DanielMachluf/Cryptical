@@ -30,6 +30,34 @@ export function Recommendations(): JSX.Element {
         }
     }, [coins.length]);
 
+    // Parse AI text response into structured JSX
+    function formatAiResponse(response: string): JSX.Element {
+        // Simple heuristic to split decision and explanation
+        // Expected format: "Decision: Buy\nExplanation: ..."
+        const lines = response.split('\n').filter(line => line.trim() !== '');
+        
+        const decisionLine = lines.find(line => line.toLowerCase().startsWith('decision:'));
+        const explanationLine = lines.find(line => line.toLowerCase().startsWith('explanation:')) || 
+                                lines.filter(l => l !== decisionLine).join(' ');
+
+        const decisionText = decisionLine ? decisionLine.replace(/decision:/i, '').trim() : 'Analysis';
+        const explanationText = explanationLine ? explanationLine.replace(/explanation:/i, '').trim() : response;
+
+        const isBuy = decisionText.toLowerCase().includes('buy') && !decisionText.toLowerCase().includes('not');
+        const decisionClass = isBuy ? 'buy' : 'not-buy';
+
+        return (
+            <div className="ai-recommendation-content">
+                <div className={`ai-decision ${decisionClass}`}>
+                    <span className="decision-badge">{decisionText}</span>
+                </div>
+                <div className="ai-explanation">
+                    {explanationText}
+                </div>
+            </div>
+        );
+    }
+    
     // Get AI recommendation for a specific coin
     async function getAiRecommendation(coinId: string) {
         try {
@@ -91,7 +119,7 @@ export function Recommendations(): JSX.Element {
 
                         {aiReviews[coin.id] && (
                             <div className="ai-result">
-                                {aiReviews[coin.id]}
+                                {formatAiResponse(aiReviews[coin.id])}
                             </div>
                         )}
 

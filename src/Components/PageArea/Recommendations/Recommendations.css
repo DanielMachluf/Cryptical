@@ -137,18 +137,67 @@
 }
 
 .ai-result {
-    margin-top: 1rem;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.7);
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(to bottom right, #ffffff, #fffdf8);
     border-radius: 12px;
-    border: 1px solid rgba(246, 196, 83, 0.3);
-    border-left: 5px solid #e9a23b;
-    font-size: 0.95rem;
+    border: 1px solid rgba(22, 163, 74, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ai-recommendation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ai-decision {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.ai-decision.buy {
+    color: #16a34a; /* Green for buy */
+}
+
+.ai-decision.not-buy {
+    color: #dc2626; /* Red for not buy */
+}
+
+/* Badge style for Decision label */
+.decision-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ai-decision.buy .decision-badge {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.ai-decision.not-buy .decision-badge {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.ai-explanation {
+    color: #4b5563;
     line-height: 1.6;
-    color: #3a2a1a;
-    animation: slideDown 0.4s ease-out forwards;
-    white-space: pre-wrap;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    font-size: 0.95rem;
+}
+
+.ai-explanation strong {
+    color: #1f2937;
+    font-weight: 600;
 }
 
 @keyframes fadeIn {
