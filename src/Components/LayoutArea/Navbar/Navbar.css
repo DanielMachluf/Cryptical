@@ -1,0 +1,113 @@
+/* =========================
+   Main Navbar Container
+   ========================= */
+.Navbar {
+    height: 72px;
+    padding: 0 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px); /* Glass effect */
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* =========================
+   Navigation Links
+   ========================= */
+.Navbar .links {
+    display: flex;
+    gap: 32px;
+    padding-right: 120px;
+}
+
+.Navbar a {
+    position: relative;
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: 500;
+    font-size: 0.95rem;
+
+    transition: color 0.3s ease;
+}
+
+/* Animated underline */
+.Navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8a1212a8, #b00707a1);
+
+    transition: width 0.35s ease;
+}
+
+/* Hover underline */
+.Navbar a:hover::after {
+    width: 100%;
+}
+
+/* Active link */
+.Navbar a.active {
+    font-weight: 600;
+}
+
+.Navbar a.active::after {
+    width: 100%;
+}
+
+/* =========================
+   Search Input
+   ========================= */
+.Navbar .search {
+    position: relative;
+}
+
+.Navbar .search input {
+    width: 220px;
+    padding: 10px 14px 10px 42px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+
+    font-size: 0.9rem;
+    color: #111;
+
+    outline: none;
+
+    transition:
+        width 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Expand on focus */
+.Navbar .search input:focus {
+    width: 280px;
+    border-color: #2979ff;
+    box-shadow: 0 10px 30px rgba(41, 121, 255, 0.25);
+}
+
+/* Search icon */
+.Navbar .search::before {
+    content: "🔍";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    opacity: 0.6;
+    pointer-events: none;
+}

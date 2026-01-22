@@ -1,0 +1,76 @@
+.CoinList {
+    width: 100%;
+    max-width: 100%;
+}
+
+.CoinList .container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+    .CoinList .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .CoinList .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Intro Header Styling */
+.CoinList .intro {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Starts hidden for animation */
+}
+
+.CoinList .intro h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    
+    /* Premium text gradient */
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    letter-spacing: -0.5px;
+    animation: shine 5s linear infinite;
+}
+
+.CoinList .intro p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}

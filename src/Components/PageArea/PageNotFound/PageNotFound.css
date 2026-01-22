@@ -1,0 +1,85 @@
+/*
+  Full screen center layout.
+  Dark theme to match crypto / premium vibe.
+*/
+.PageNotFound {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1b1f2a, #0f1117);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+  Glass-like card container.
+*/
+.PageNotFound .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+
+    padding: 60px 70px;
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    /* Smooth fade-in animation */
+    opacity: 0;
+    animation: fadeIn 1.6s ease-out forwards;
+}
+
+/* Big 404 number */
+.PageNotFound h1 {
+    font-size: 6rem;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+/* Subtitle */
+.PageNotFound h2 {
+    font-size: 1.6rem;
+    color: #f1f1f1;
+    margin-bottom: 15px;
+}
+
+/* Description text */
+.PageNotFound p {
+    color: #b5b5b5;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.PageNotFound button {
+    background: linear-gradient(135deg, #00e5ff, #2979ff);
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Premium hover effect */
+.PageNotFound button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.35);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

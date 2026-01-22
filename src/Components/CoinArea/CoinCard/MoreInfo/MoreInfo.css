@@ -1,0 +1,39 @@
+/*
+  Expandable "More Info" section.
+  Warm, subtle, and readable.
+*/
+.MoreInfo {
+    margin-top: 12px;
+    padding: 14px 16px;
+
+    border-radius: 12px;
+    background: rgba(255, 245, 230, 0.9);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    animation: fadeIn 0.35s ease-out;
+}
+
+/* Each price row */
+.MoreInfo .row {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 0.9rem;
+    color: #3a2a1a;
+    font-weight: 500;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

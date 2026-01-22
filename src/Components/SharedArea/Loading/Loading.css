@@ -1,0 +1,75 @@
+/*
+  Full-screen center loader.
+  Can be reused across the entire app.
+*/
+.Loading {
+    height: 60vh; /* Takes up significant portion of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/*
+  Loader dots container
+*/
+.Loading .loader {
+    display: flex;
+    gap: 10px;
+}
+
+/*
+  Each dot
+*/
+.Loading .loader span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #ffa600c8, #690808);
+
+    animation: pulse 1.4s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+/*
+  Staggered animation delay
+*/
+.Loading .loader span:nth-child(1) {
+    animation-delay: 0s;
+}
+.Loading .loader span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.Loading .loader span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/*
+  Loading text
+*/
+.Loading p {
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 0.5px;
+}
+
+/*
+  Pulse animation
+*/
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+}
