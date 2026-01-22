@@ -52,6 +52,12 @@ This project was built as part of my learning process, with a strong focus on wr
 GitHub:
 [https://github.com/DanielMachluf](https://github.com/DanielMachluf)
 
+GitHub project link:
+[https://github.com/DanielMachluf/Cryptical](https://github.com/DanielMachluf/Cryptical)
+
+Firebase project link:
+[crypticalmac.web.app](crypticalmac.web.app) 
+
 ---
 
 # React + TypeScript + Vite
