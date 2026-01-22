@@ -29,7 +29,7 @@ export function addSelectedCoin(
     }
 
     //add a notify success :
-    notify.success(`${coinToAdd} has been successfully added for live tracking and AI-powered performance reviews!`);
+    notify.success(`${coinToAdd} has been added successfully!`);
 
 
     return newState; // Return new state.
@@ -50,7 +50,7 @@ export function removeSelectedCoin(
     }
 
     // Notify removal:
-    notify.info(`${coinToRemove} has been removed from live tracking and AI-powered performance reviews.`);
+    notify.info(`${coinToRemove} has been removed.`);
 
     return newState; // Return new state.
 }

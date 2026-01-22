@@ -39,7 +39,7 @@ export function MaxCoinsDialog(props: MaxCoinsDialogProps): JSX.Element {
       // Then immediately add the coin the user wanted
       dispatch(selectedCoinsActions.addSelectedCoin(props.pendingCoinSymbol));
       
-      notify.success(`${props.pendingCoinSymbol} is now selected for live tracking and AI-powered performance reviews!`);
+      notify.success(`${props.pendingCoinSymbol} is now added successfully!`);
       
       props.onClose();
     }
