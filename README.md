@@ -56,7 +56,7 @@ GitHub project link:
 [https://github.com/DanielMachluf/Cryptical](https://github.com/DanielMachluf/Cryptical)
 
 Firebase project link:
-[crypticalmac.web.app](crypticalmac.web.app) 
+[https://crypticalmac.web.app/](https://crypticalmac.web.app/) 
 
 ---
 

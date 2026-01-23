@@ -21,7 +21,7 @@ function loadSelectedCoins(): string[] {
 export const store = configureStore<AppState>({
     reducer: {
         coins: coinsSlice.reducer, //connect AppState user to userSlice reducer:
-        selectedCoins: selectedCoinsSlice.reducer ,//connect AppState selectedCoins to selectedCoinsSlice reducer:
+        selectedCoins: selectedCoinsSlice.reducer,//connect AppState selectedCoins to selectedCoinsSlice reducer:
         searchText: searchSlice.reducer
     },
     preloadedState: {

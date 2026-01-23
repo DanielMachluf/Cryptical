@@ -16,7 +16,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../../Redux/AppState";
 import { JSX } from "react";
 import { selectedCoinsActions } from "../../../Redux/SelectedCoinsSlice";
-import { notify } from "../../../Utils/Notify";
 
 interface MaxCoinsDialogProps {
   open: boolean;          // controls dialog visibility
